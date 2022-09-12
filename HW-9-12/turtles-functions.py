@@ -36,6 +36,18 @@ def ngon(t,x,y,w,color,sidelen):
     for i in range (8):
         t.forward(sidelen)
         t.right(45)
+        
+def hexagon(t,x,y,w,color,sidelen):
+    #set the location, color, and width
+    t.penup()
+    t.goto(x,y)
+    t.width(w)
+    t.color(color)
+    t.pendown()
+    #draw an octogon
+    for i in range (6):
+        t.forward(sidelen)
+        t.right(300)
 
 
 wn = turtle.Screen()
@@ -53,6 +65,8 @@ square(crush,150,30,2,"blue",60)
 triangle(crush,50,50,1,"purple",50)
 
 ngon(crush,-90,70,2,"pink",80)
+
+hexagon(crush,-20,20,2,"orange",80)
 
 
 #squirt.penup()

@@ -42,13 +42,15 @@ def piglatin(word):
     first = word[0]
     if first in consonent:
         wordLength = len(word)
-        removeFirstLetter = word[1:wordLength]
-        result = removeFirstLetter + first + ay
+        removeFirstLetter = word[2:wordLength]
+        result = word[1].capitalize() + removeFirstLetter + first + ay
+     
+        
         return result
     else:
-        result = word + yay
+        wordLength = len(word)
+        result = word[0].capitalize() + word[1:wordLength] + yay
         return result
-            
 # Test piglatin
 
 result = piglatin("hello")

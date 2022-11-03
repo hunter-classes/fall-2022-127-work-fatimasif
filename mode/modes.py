@@ -60,16 +60,20 @@ def mode(dataset):
 def fastMode(dataset):
     # assume all values in dataset
     # are between 0 and 99 inclusive
+largest = findLargest(dataset)
 
     # 1. make a list of 100 slots
     # and set them all to 0
     # this will store our tallies
+  tallies = [0 for x in range(100)]
 
     # 2. Loop through our dataset
     # and for each item incremement
     # (add 1) to the appropriate
     # slot in the tallies list
-
+for item in dataset:
+  tallies[item] = tallies[item]+1
+  
     # 3. the index with the highest
     # value in tallies is the mode
 

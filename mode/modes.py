@@ -73,11 +73,11 @@ largest = findLargest(dataset)
     # slot in the tallies list
 for item in dataset:
   tallies[item] = tallies[item]+1
+
+mode_count = findLargest(tallies)
   
     # 3. the index with the highest
     # value in tallies is the mode
-
-    pass
 
     
 def testMode(size,maxValue):

@@ -23,7 +23,7 @@ story = f.read()
 # Creating a function to have the madlibs game work. Substituting the placeholders for a input from the lists.
 def madlibs():
   word = story.split() # Splitting the string into a list 
-  sentence = '' # Used inspiration from Derek's code to create an empty string to execute 
+  sentence = '' # Used inspiration from Derek's code to create an empty string. Used this to add to my original code which only used if statements that would not work because they made a variable == to a replace and random function
   name = random.choice(names) # Keeping the same name throughout the story (extra)
   for i in word:
       # Each if statement will check for where there is a needed input in the story

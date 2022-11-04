@@ -46,10 +46,10 @@ def madlibs():
       sentence += (" "+random.choice(foods))  
     else:
         sentence += (' '+i)
-  print(sentence)
+  return(sentence)
  
-# Running the function
-madlibs()
+# Running and printing the function
+print(madlibs())
 
 
 

@@ -3,6 +3,11 @@
 # When run, it should print out at least two original sentences each followed by two different madlab outputs for each.
 # These sentences can be declared as multiline (triple quote) strings in your program.
 
+# Completed two extras: (1) wrote story in a text file, (2) reused a replacement
+# Attempted to capitalize the names as an extra 
+
+# Used inspiration and help with syntax from W3 Schools Python
+
 # Creating and writing a seperate text file (extra)
 with open('story.txt', 'w') as f:
     f.write('It was <FOOD> day at school, and <NAME> was super <ADJECTIVE> for lunch. <NAME> went outside to eat, a <NOUN> stole her food! <NAME> chased the <NOUN> all over school. She <VERB> through the playground. Then she tripped on her <NOUN> and the <NOUN> escaped!')

@@ -2,39 +2,79 @@
 
 # When run, it should print out at least two original sentences each followed by two different madlab outputs for each.
 # These sentences can be declared as multiline (triple quote) strings in your program.
+
+# Creating and writing a seperate text file (extra)
 with open('story.txt', 'w') as f:
-    f.write('It was <FOOD> day at school, and <NAME> was super <ADJECTIVE> for lunch. <NAME> went outside to eat, a <NOUN> stole her <FOOD>! <NAME> chased the <NOUN> all over school. She <VERB>, <VERB>, and <VERB> through the playground. Then she tripped on her <NOUN> and the <NOUN> escaped!')
+    f.write('It was <FOOD> day at school, and <NAME> was super <ADJECTIVE> for lunch. <NAME> went outside to eat, a <NOUN> stole her food! <NAME> chased the <NOUN> all over school. She <VERB> through the playground. Then she tripped on her <NOUN> and the <NOUN> escaped!')
     
 import random
 
-# declaring variables
+# Declaring variables
 foods = ['pizza', 'taco', 'burrito', 'pasta', 'burger']
 names = ['samantha','paulina','catherine','fatima']
 adjectives = ['dirty', 'amazing', 'smelly', 'beautiful', 'tasty', 'happy', 'excited', 'upset']
 nouns = ['dog', 'book', 'wallet', 'mouse', 'paint', 'chicken', 'chair']
 verbs = ['ate','walked','slept', 'dance', 'run', 'jump']
 
+# Opening the story file and reading it
+f = open('story.txt', 'rt')  
+story = f.read()
+  
+# Creating a function to have the madlibs game work. Substituting the placeholders for a input from the lists.
+def madlibs():
+  word = story.split() # Splitting the string into a list 
+  sentence = '' # Used inspiration from Derek's code to create an empty string to execute 
+  name = random.choice(names) # Keeping the same name throughout the story (extra)
+  for i in word:
+      # Each if statement will check for where there is a needed input in the story
+    if i == "<NAME>":
+      sentence += (" "+name.capitalize()) # Capitalizing the names (attempted extra) and keeping the same name throughout (extra)
+      # Using random.choice function to randomly select item from a list and be inputted into the story
+      # += operator lets you add two values together and assign the resultant value to a variable
+    elif i == "<VERB>":
+      sentence += (" "+random.choice(verbs)) 
+    elif i == "<NOUN>":
+      sentence += (" "+random.choice(nouns)) 
+    elif i == "<ADJECTIVE>":
+      sentence += (" "+random.choice(adjectives))    
+    elif i == "<FOOD>":
+      sentence += (" "+random.choice(foods))  
+    else:
+        sentence += (' '+i)
+  print(sentence)
+ 
+# Running the function
+madlibs()
+
+
+
+
+# Previous old code that is just here to look back on
+
 # keep the same name throughout the story 
-name = random.choice(names)
+#name = random.choice(names)
 
 # capitalizing the names in the story and at the beginning of the sentence 
-f = open('story.txt', 'rt')
-for word in f:
-  word = word.split()
-  for i in word:
-    if i == "<NAME>":
-      if word.index("<NAME>") != 0:
-        name = name.capitalize()
+#f = open('story.txt', 'rt')
+#for word in f:
+#  word = word.split()
+#  for i in word:
+#    if i == "<NAME>":
+#      if word.index("<NAME>") != 0:
+#        name = name.capitalize()
 
-word = ' '.join(word)
-word = word.replace('<NAME>',name)
-word = word.replace('<FOOD>',random.choice(foods))
-word = word.replace('<ADJECTIVE>',random.choice(adjectives))
-word = word.replace('<NOUN>',random.choice(nouns))
-word = word.replace('<VERB>',random.choice(verbs))
-print(word)
+#word = ' '.join(word)
+#word = word.replace('<NAME>',name)
+#word = word.replace('<FOOD>',random.choice(foods))
+#word = word.replace('<ADJECTIVE>',random.choice(adjectives))
+#word = word.replace('<NOUN>',random.choice(nouns))
+#word = word.replace('<VERB>',random.choice(verbs))
+#print(word)
 
-# Old Code
+
+
+# Another previous old code that is just here to look back to
+
 # Declaring variables 
 # verbs=['ate','walked','slept']
 # nouns=['dog','hammer','cat','car','frog']

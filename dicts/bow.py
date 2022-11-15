@@ -16,6 +16,8 @@ def build_bow(data):
         
     return counts
 
+
+
 def get_words_min_max(bag,mincount,maxcount):
   results=[]
   for word in bag.keys():
@@ -35,3 +37,10 @@ file = open("scandal.txt",encoding='utf-8')
 raw_data = file.read()
 data = clean(raw_data)
 bag = build_bow(data)
+
+f = open('stopwords.txt')
+# or you can also do:
+# stop_words = open('stopwords.txt').read().split()
+stop_words = []
+for word in f.read().split():
+  stop_words.append(word)

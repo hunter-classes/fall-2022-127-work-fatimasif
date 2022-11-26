@@ -39,7 +39,7 @@ def translate(english):
     result = [pirateWords.get(word, word) for word in words]
     # Capitalize words that begin a sentence (EXTRA)
     capitalize = True
-    for i, word in enumerate(result):
+    for i, word in enumerate(result): # enumerate() loops over a collection of data once for each item in it
         if capitalize:
             result[i] = word.capitalize()
             capitalize = False

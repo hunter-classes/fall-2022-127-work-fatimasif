@@ -1,4 +1,4 @@
-# Project 2 Pirate.org - Working Solo 
+# Project 2 Pirate.org - working solo 
 
 # Your program will take an text file named input.txt and read it in and use the dictionary (described below) to translate the contents of input.txt to pirate-speak. Your program should print out the results.
 # Your program should contain a dictionary of substitutions to convert the input file into pirate-speak.
@@ -33,7 +33,8 @@ pirateWords = {
 # Function to translate sentence from English to Pirate Speak
 def translate(english):
     # Splitting the string into a list 
-    words = story.split()
+    import re
+    words = re.findall(r"[\w']+|[.,!?;]", story) # Splitting a string into words and punctuation 
     # Substitute the English words with the Pirate translations.
     result = [pirateWords.get(word, word) for word in words]
     # Capitalize words that begin a sentence (EXTRA)
